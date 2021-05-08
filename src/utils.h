@@ -30,7 +30,6 @@ History:
 #define UTILS_H_INCLUDED
 
 #include <stdio.h>
-#include <libxml/xmlreader.h>
 #include <zlib.h>
 
 
@@ -61,8 +60,6 @@ History:
 #define safeStrAppend(x,y) _safeStrAppend(__FILE__, __LINE__, x, y)
 #define safeGzOpen(filename, mode) _safeGzOpen(__FILE__, __LINE__, filename, mode)
 #define safeFOpen(filename, mode) _safeFOpen(__FILE__, __LINE__, filename, mode)
-#define safeXmlNewTextReaderFilename(filename) _safeXmlNewTextReaderFilename(__FILE__, __LINE__, filename)
-#define safeXmlTextReaderRead(fp) _safeXmlTextReaderRead (__FILE__, __LINE__, fp)
 
 
 /************************************************************************************/
@@ -75,8 +72,6 @@ char* _safeStrdup(const char* file, int line, char* s);
 char* _safeStrAppend(const char* file, int line, char* x, const char* y);
 gzFile _safeGzOpen(const char* file, int line, char* filename, char* mode);
 FILE* _safeFOpen(const char* file, int line, char* filename, char* mode);
-xmlTextReaderPtr _safeXmlNewTextReaderFilename(const char* file, int line, char* filename);
-int _safeXmlTextReaderRead(const char* file, int line, xmlTextReaderPtr fp);
 char* shortName(char* name);
 
 #endif // UTILS_H_INCLUDED

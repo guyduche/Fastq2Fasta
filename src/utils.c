@@ -94,27 +94,6 @@ FILE* _safeFOpen(const char* file, int line, char* filename, char* mode)
     return fp;
 }
 
-xmlTextReaderPtr _safeXmlNewTextReaderFilename(const char* file, int line, char* filename)
-{
-    xmlTextReaderPtr fp = xmlNewTextReaderFilename(filename);
-    if (fp == NULL)
-        fprintf(stderr, "Unable to open the XML file. Error in %s at line %d\n", file, line);
-    return fp;
-}
-
-
-/************************************************************************************/
-/*  Safe XML read                                                                   */
-/************************************************************************************/
-int _safeXmlTextReaderRead(const char* file, int line, xmlTextReaderPtr fp)
-{
-    int evt = xmlTextReaderRead(fp);
-    if (evt == -1)
-        fprintf(stderr, "Error while reading the XML node. Error occurred in %s at line %d\n", file, line);
-    return evt;
-}
-
-
 /************************************************************************************/
 /*  String shortener                                                                */
 /************************************************************************************/
