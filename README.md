@@ -1,6 +1,7 @@
 # Fastq2Fasta
 
 **Fastq2fasta** converts single or paired end fastQ(s) in a single fasta file for Blastn input.
+The input file(s) can be gzipped or not.
 
 # Docker
 
@@ -8,19 +9,20 @@
 $ docker run --rm -v ${PWD}:/data guyduche/fastq2fasta [options] FastQ_1 [FastQ_2] > out.fasta
 ```
 
-# Requirements
+# Compilation from source
+
+### Requirements
 
 - make
 - gcc
 - zlib1g-dev
 
-# Compilation
-
+### Compilation
 ```
 $ make
 ```
 
-# Usage
+### Run
 
 ```bash
 $ fastq2fasta [options] FastQ_1 [FastQ_2] > out.fasta
@@ -35,21 +37,6 @@ $ fastq2fasta [options] FastQ_1 [FastQ_2] > out.fasta
 </table>
 
 # Example
-
-### Makefile
-
-```Makefile
-.SHELL = /bin/bash
-BINDIR = ../bin
-SRCDIR = ../src
-FASTQ = test_1.fastq.gz test_2.fastq.gz
-
-test.fasta: ${BINDIR}/fastq2fasta ${FASTQ}
-	$^ > $@
-
-${BINDIR}/fastq2fasta:
-	(cd ${SRCDIR}; ${MAKE})
-```
 
 ### FastQ
 
