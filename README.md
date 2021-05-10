@@ -2,6 +2,12 @@
 
 **Fastq2fasta** converts single or paired end fastQ(s) in a single fasta file for Blastn input.
 
+# Docker
+
+```bash
+$ docker run --rm -v ${PWD}:/data guyduche/fastq2fasta [options] FastQ_1 [FastQ_2] > out.fasta
+```
+
 # Requirements
 
 - make
